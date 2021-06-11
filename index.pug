@@ -1,0 +1,1282 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+    link(rel='stylesheet', href='dist/styles.css')
+    <!-- Swiper Css -->
+    link(rel="stylesheet", href="css/swiper.min.css")
+  
+    <!-- External JavaScripts -->
+    script(type='text/javascript', src='js/jquery.min.js')
+    <!-- filterizr JavaScripts --> 
+    script(type='text/javascript', src='js/jquery.filterizr.min.js')
+
+    <!-- Swiper JavaScripts -->
+    script(type='text/javascript', src='js/swiper.jquery.min.js')
+
+    <!-- Core JavaScripts -->
+    script(type='text/javascript', src='js/common.js')
+
+
+    title YenTe Ho Resume
+  body
+    #wrapper 
+      header#header.col-12
+        .header-wrapper(onclick='change(this)')
+          .burger.is--hide#trigger
+            .burger-menu
+              .bar1
+              .bar2
+              .bar3
+          .nav_logo
+            a(href="#")
+              embed(src="img/logo.svg", type="")
+          //- nav_logo end
+          .nav_search
+          .nav_list#show 
+            ul
+              //- a(href='')
+              //-   li
+              //-     i.fa.fa-search(aria-hidden='true')
+              //- a(href='')
+              //-   li
+              //-     i.fa.fa-home(aria-hidden='true')
+              //- a(href='#portfolio')
+              //-   li
+              //-     div Portfolio
+              //- a(href='')
+              //-   li
+              //-     div Blog
+              //- a(href='tel:0958-941-898')
+              //-   li
+              //-     i.fa.fa-phone(aria-hidden='true')
+              a(href='mailto:ythoworkfun@gmail.com')
+                li
+                  i.fa.fa-envelope-o(aria-hidden='true')
+     
+          //- nav_list end
+          //- .nav_language
+          //-   ul
+          //-     li
+          //-       a(href='')
+          //-         div 繁 
+          //-     li
+          //-       div |
+          //-     li
+          //-       a(href='')
+          //-         div 简
+          //-     li
+          //-       div |
+          //-     li
+          //-       a(href='')
+          //-         div EN
+          //- nav_language end
+        //- header container end
+
+      .row.col-12
+      section#intro
+        .info-wrapper
+
+
+
+      .row
+      section#portfolio
+        .portfolio-wrapper
+          //Portfolio Filter
+            =============================================
+          
+          ul.portfolio_filter
+            .closebtn.burger.is--hide
+              .burger-menu.open
+                .bar1
+                .bar2
+                .bar3
+            //- (data-container='#portfolio')
+            //- li.active(data-filter='all') All
+            li.about.active(data-filter='all')
+              i.fa.fa-home(aria-hidden='true')
+            li.portfolio(data-filter='100') Portfolio
+
+            li.portfolio-list(data-filter='2') Product & Animation
+            li.portfolio-list(data-filter='3') Web & Graphic
+            li.portfolio-list(data-filter='4') Awards
+            li.portfolio-list(data-filter='5') Patent Analysis Award
+            li.portfolio-list(data-filter='6') Selected Projects
+            //- li.portfolio-list(data-filter='7') 
+            //- li.portfolio-list(data-filter='8') 
+            // Search control
+            li.search-row
+                i.fa.fa-search(aria-hidden='true')
+                //- | Search:
+                input(type='text', name='filtr-search', data-search='')
+
+          
+          .device.col-8
+            .device_screen#device_screen
+              .filtr-container
+                .filtr-item.who(data-category='1', data-sort='', onclick='openCv1()')
+                  img(src='', alt='')
+                  span About
+                .filtr-item.who(data-category='1', data-sort='', onclick='openCv2()')
+                  img(src='', alt='')
+                  span Professional Experience
+                .filtr-item(data-category='2, 100', data-sort='', onclick='openPortfolio1()')
+                  img(src='', alt='')
+                  span Zion Grotto Road Tire - 3D Model
+                  //- span Luminous night
+                .filtr-item(data-category='2, 100', data-sort='', onclick='openPortfolio2()')
+                  img(src='', alt='')
+                  span Zion Grotto Road Tire - 3D Animation
+                
+                .filtr-item(data-category='2, 100', data-sort='', onclick='openPortfolio3()')
+                  img(src='', alt='')
+                  span Zion Grotto Road Tire - Icons & Business Card
+                .filtr-item(data-category='3, 100', data-sort='', onclick='openPortfolio4()')
+                  img(src='', alt='')
+                  span Pypat IP Service Co., - Brochues 
+                .filtr-item(data-category='3, 100', data-sort='', onclick='openPortfolio5()')
+                  img(src='', alt='')
+                  span Pypat IP Service Co., - Website
+                .filtr-item(data-category='3, 100', data-sort='', onclick='openPortfolio6()')
+                  img(src='', alt='')
+                  span APAA Conferance - Poster / Manual
+                .filtr-item(data-category='4, 100', data-sort='', onclick='openPortfolio7()')
+                  img(src='', alt='')
+                  span Young Designers' Exhibition Award - Rush Handicraft
+                .filtr-item(data-category='4, 100', data-sort='', onclick='openPortfolio8()')
+                  img(src='', alt='')
+                  span Young Designers' Exhibition Award - Interior Design
+                .filtr-item(data-category='4, 100', data-sort='', onclick='openPortfolio9()')
+                  img(src='', alt='')
+                  span  Non-residential Space Interior Design Winner
+                .filtr-item(data-category='5, 100', data-sort='', onclick='openPortfolio10()')
+                  img(src='', alt='')
+                  span 2016 Patent Analysis and Development Competition 
+                .filtr-item(data-category='6, 100', data-sort='', onclick='openPortfolio11()')
+                  img(src='', alt='')
+                  span 360° Panorama Aurora Photography
+                .filtr-item(data-category='6, 100', data-sort='', onclick='openPortfolio12()')
+                  img(src='', alt='')
+                  span Pingxi Travellers Lodge
+                .filtr-item.more(data-category='1, 2, 3, 4, 5, 6', data-sort='')
+                  img(src='', alt='')
+                  span More...
+            .menubtn
+            #cv1.overlay
+              a.closebtn(onclick='closeCv1()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .intro
+                .intro-photo
+                  img(src="img/photo.jpg", alt="")
+                .intro-content
+                  h4 Hi, I'm YenTe Ho (何妍德),
+                  //- h5 an UI/UX designer & front-end web developer
+                  br
+                  h5 IT consultant with 3+ years of experience, specialty in UI design, micro-interactions, UX research and front-end development for digital gaming, e-commerce and startup.
+                  
+                  br
+                  .button#modalbtn Skills of Design 
+                  .modal#modalbox
+                    .modal-content
+                      ul
+                        li
+                          h4 Front-end Web Developement
+                          h5 Optimize web performance by building cross-platform, cross-browser and RWD solutions in desktop, tablet and mobile.
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 HTML5(Pug), CSS3(sass), JQuery, JavaScript
+                        li 
+                          h4 UI Design / Interaction Design
+                          h5 Proficient at prototyping, creating and developing design assets included wireframes, user flows, iconography, and high-fidelity mockups.
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 Sketch, Adobe XD
+                        li 
+                          h4 UX Research
+                          h5 Ability to plan and execute usability testing and incorporate user feedback into final product design.
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 Sketch, Adobe XD
+                        li
+                          h4 Industrial Design
+                          h5 producing prototypes / Alias 3D Modeling / Showcase 3D Rendering
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 Alias, AutoCad 2D, AutoCad3D, Showcase
+                        li
+                          h4 3D Animation
+                          h5 Titles and opticals design, music, animation editing and post-production
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 After Effects, Blender, Photoshop  
+                        li
+                          h4 Comercial Design
+                          h5 CIS Design, Logo, Business Card, Brochures, DM
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 Photoshop, Illustrator, Lightroom, Painter
+                        
+                        li
+                          h4 Interior Design
+                          h5 3dsMas 3D Modeling，Vray lighting Rendering, Plan-elevation-section Drawing
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 3Ds MAX, Vray, Sketch up, AutoCad 2D
+                        
+                        li
+                          h4 Design Competition
+                          h5 ＩＦ, Reddot Competition
+                      span.back.close Back
+
+                  .button#modalbtn1 Skills of Patent
+                  .modal#modalbox1
+                    .modal-content
+                      ul
+                        li
+                          h4 Patent Search
+                          h5 Utilizing variety of global patent databases such as USPTO, EPO, TPO, JPO, CPO, Thomson Reuters, WIPS, MTrends, LexisNexis, to search technical documents
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 USPTO, EPO, TPO, JPO, CPO
+                        li
+                          h4 Patent Analysis
+                          h5 Creating the technology/function matrix for technology forecasting
+                          .skill
+                            i.fa.fa-wrench(aria-hidden='true') 
+                            h6 Thomson  Reuters, WIPS, MTrends, LexisNexis
+                        li
+                          h4 Office Action reply
+                          h5 Comparing the prior art with written description and claim language to consider the best solution to solve the Unity / Novelty / Inventive problems, etc
+                        li
+                          h4 Translation
+                          h5 Translating technical documents from and into English and Chinese
+
+                      span.back1.close Back
+                      
+                  br
+                .contact
+                  ul
+                    a(href='mailto:ythoworkfun@gmail.com')
+                      li
+                        i.fa.fa-envelope-o(aria-hidden='true')
+                    a(href='tel:0958-941-898')
+                      li
+                        i.fa.fa-phone(aria-hidden='true')
+                    a(href='https://www.linkedin.com/in/yente-ho-b616baa1/')
+                      li
+                        i.fa.fa-linkedin(aria-hidden='true')
+                    a(href='https://github.com/yenteho')
+                      li
+                        i.fa.fa-github(aria-hidden='true')
+                    a(href='https://codepen.io/yenteho/')
+                      li
+                        i.fa.fa-codepen(aria-hidden='true')
+                
+                a(href="https://www.dropbox.com/s/szjynzcxqkkkuxw/%E4%BD%95%E5%A6%8D%E5%BE%B7Resume%20201705.pdf?dl=0").download  Download my CV                
+
+                br
+
+            #cv2.overlay
+              a.closebtn(onclick='closeCv2()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              // The Timeline
+              .timline-wrapper
+                ul.timeline
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag Xuenn Pte Ltd. 
+                        span.time-wrapper
+                          span.time 2017 Jul- Present
+                      .desc.left 
+                        span - Implemented enhancing and supporting the current 188bet, TouTou, Rich88 and V9BET Sports Website included Desktop, Mobile and Tablet products.
+                        br
+                        span -Executed and translated high-level requirements of visual design performances using HTML(Pug) and CSS(SASS) into precise, intuitive, and functional user interfaces.
+                        br
+                        span - Restructured HTML and CSS(SASS) with Webpack as Responsive web design for 2018 World Cup.
+                        br
+                        span - Created icon-fonts which customized for 4 brands to replace the previous sprite image system for optimize file size. 
+                        br
+                        span - Negotiated and coordinated between users and developers to check the final layouts, interactions and functions in Axure, Sketch and Zeplin.
+                        br
+                        span - Tested front-end code in multiple browsers to ensure cross-browser compatibility.
+                        br
+                        span - Went to Philippines on business for discussing and planning the new projects.
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Rapaq Ltd.
+                        span.time-wrapper
+                          span.time 2017 Mar- 2017 May
+                      .desc.left 
+                        span - Used HTML, CSS(SCSS), JavaScript and jQuery to create user-friendly web pages for E-commerce and local social media.  
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Yolomoto Co., Ltd.
+                        span.time-wrapper
+                          span.time 2016 Sep - 2017 Feb
+                      .desc.left 
+                        span - Graphic Designer/ Industrial Designer/ Animation Designer/ Web Designer  
+                        br
+                        strong Graphic Design：
+                        span  Used Adobe Graphic software as Photoshop and Illustrator to design Logo, business card and Brochures
+                        br
+                        strong - Industrial Design：
+                        span Used Alias and Autodesk Showcase to make bike tire modeling and rendering
+                        br
+                        strong - Multimedia Design / Animation Design：
+                        span Used Blender and After Effects to build 3D models and animation films
+                        br
+                        span Designed and developed business website for start-up company
+                        br
+                        span Used HTML5, CSS3, JavaScript and Bootstrap3, JQuery to make user interface
+                        br
+                        span Consulted on various materials and design techniques for new product lines and trade show displays
+                        br
+                        span Attended red-dot design competition
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag Master Degree
+                        span.time-wrapper
+                          span.time 2014 Sep - 2016 Jun
+                      .desc
+                        span National Taiwan University of Science and Technology 
+                        span College of Intellectual Property Studies   
+                        strong Graduate Institute of Patent
+                        br
+                        strong （GPA: 4.0/4.0）
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Boehmert & Boehmert
+                        span.time-wrapper
+                          span.time 2016 Mar - 2016 Jun 
+                      .desc 
+                        span  Patent Engineer Intern   
+                        strong ｜  Munich, Germany
+                        br
+                        span -	Received specialized training in patent searching, analysis and drafting of EPO
+                        br
+                        span -	Compared the prior art with written description and claim language mentioned by examiner carefully
+                        br
+                        span -	Discussed with clients to consider the best solution to solve the Unity / Novelty / Inventive problems
+                        br
+                        span -	Drafted EPO Office Action reply including novelty and inventive steps under the European Patent Convention
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Mt. Jade Mountain Climbing 
+                        span.time-wrapper
+                          span.time 2016 Apr
+                      .desc 
+                        span  3952 meters high
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag PyPat IP Services Co., Ltd.  
+                        span.time-wrapper
+                          span.time 2015 Jul - 2016 Jan
+                      .desc 
+                        span Patent Analysis Intern  
+                        br
+                        span -	Translated technical documents and data from Chinese to English
+                        br
+                        span -	Utilized variety of global patent databases to develop a new patent searching system
+                        br
+                        span -	Designed user interface of the patent searching system
+                        br
+                        span -	Communicated with clients to optimize IP strategies
+                        br
+                        span -	Provided the technology/function matrix for technology forecasting
+                        br
+                        span -	Helped craft legal opinions on ownership, inventorship, infringement, and validity issues
+                        br
+                        span -	Designed DM/Quotation Form
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag New York Model United Nations
+                        span.time-wrapper
+                          span.time 2015 Apr
+                      .desc
+                        span Attended UNEP conference and acted as a delegate of Seychelles
+                        br
+                        span On the topic of “Promoting Resource Efficiency in Urban Development”
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Pan Asia Model United Nations 
+                        span.time-wrapper
+                          span.time 2014 Nov
+                      .desc
+                        span Attended UNODC conference and acted as a delegate of Kuwait
+                        br
+                        span On the topic of “Substance abuse treatment and care for women”  
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Bachelor Degree
+                        span.time-wrapper
+                          span.time 2015 Sep - 2016 Jan
+                      .desc 
+                        span National Taiwan University of Science and Technology
+                        span US Patent Practice / Patent Litigation / Claim Interpretation of Patents
+                        strong Teaching Assistant
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Cycling around Taiwan 
+                        span.time-wrapper
+                          span.time 2015 Aug
+                      .desc 
+                        span  ｜ 9 days / 590 miles
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag Coursera | University of Michigan
+                        span.time-wrapper
+                          span.time 2015 Nov - 2017 Feb
+                      .desc 
+                        span - HTML5
+                        a(href="https://www.coursera.org/account/accomplishments/certificate/BDSND8Q8T47A")  Certificate
+                        br
+                        span - CSS3 
+                        a(href="https://www.coursera.org/account/accomplishments/certificate/ZSBUFDQ6A92Q")  Certificate
+                        br
+                        span - JavaScript 
+                        a(href="https://www.coursera.org/account/accomplishments/certificate/4H94TFCXYW76")  Certificate
+                        br
+                        span - Advanced Styling with Responsive Design
+                        a(href="https://www.coursera.org/account/accomplishments/certificate/BVJMZTSWTS8Q")  Certificate
+                        br
+                        span - Web Design for Everybody Capstone
+                        a(href="https://www.coursera.org/account/accomplishments/certificate/4H94TFCXYW76")  Certificate
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag 31th International Massive Swimming
+                        span.time-wrapper
+                          span.time 2014 Aug
+                      .desc 
+                        span  Across Sun Moon Lake activity｜ 3000 meters
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag National Taipei University of Technology
+                        span.time-wrapper
+                          span.time 2010 Sep - 2014 Jun 
+                      .desc 
+                        span Bachelor of Science (BSc)   
+                        strong  ｜ Department of Industrial Design
+                        br
+                        span Furniture and interior design major
+                        strong （GPA: 3.3/4.0）
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag 2014 Taiwan Design Exhibition
+                        span.time-wrapper
+                          span.time 2014 Jun
+                      .desc 
+                        span Invited Exhibition
+                        br
+                        span Reported on Central News Agency
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Yilan Heyi Exhibition 
+                        span.time-wrapper
+                          span.time 2014 May
+                      .desc 
+                        span Yilan Heyi The Exhibition of Cultural and Creative Industry
+                        span Invited Exhibition
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Young Designers' Exhibition (YODEX)
+                        span.time-wrapper
+                          span.time 2014 Apr
+                      .desc 
+                        span  Excellence Award
+                        strong  Craft Design
+                        br
+                        span Exhibited in Taipei World Trade Center
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag "Permanent Public Toilets" Competition
+                        span.time-wrapper
+                          span.time 2014 Apr
+                      .desc 
+                        span Taitung County "Permanent Public Toilets" Competition
+                        strong Bronze Award Winner
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag Space Interior Design
+                        span.time-wrapper
+                          span.time 2013 Apr
+                      .desc 
+                        span Non-residential Space Interior Design
+                        strong Winner
+                        br
+                        span Residential Space Interior Design
+                        strong Winner
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag Kaplan International
+                        span.time-wrapper
+                          span.time 2011 Sep - 2012 Feb
+                      .desc 
+                        span AdvancedTOEFLandAcademicEnglishProgram
+                        br
+                        span NewYork,USA
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag Senior High School
+                        span.time-wrapper
+                          span.time 2006 Sep - 2009 Jun
+                        .desc 
+                          span Taipei Municipal Song Shan Senior High School
+                  li
+                    .direction-r
+                      .flag-wrapper
+                        span.flag National Student Art Competition
+                        span.time-wrapper
+                          span.time 2006 Jun
+                      .desc 
+                        span Graphic Design / Engraving Double Champion
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag Junior High School
+                        span.time-wrapper
+                          span.time 2003 Sep - 2006 Jun
+                      .desc
+                        span Taipei Municipal Jinhua Junior High School 
+                        span Courses for the gifted in art
+                        br
+                        span Major in Sketch / Watercolor / Chinese Painting / Calligraphy / Printmaking / Sculpture
+                  li
+                    .direction-l
+                      .flag-wrapper
+                        span.flag Elementary School
+                        span.time-wrapper
+                          span.time 1999 Sep - 2003 Jun
+                      .desc 
+                        span Taipei Municipal Gu Ting Elementary School
+                        span Courses for the gifted in music
+                        br
+                        span Major in piano / Minor in French Horn
+
+                // Slider main container
+              
+            #yolomoto-biketire-3d.overlay
+              a.closebtn(onclick='closePortfolio1()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title Zion Grotto Road Tire
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span 3D Modeling / 3D Redering
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Alias / Showcase / Photoshop
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Nov 2016
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span Yolomoto Co., Ltd.
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide 
+                      img(src="img/yolomoto-biketire.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/yolomoto-tirerender-1.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/yolomoto-tirerender-2.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/yolomoto-tirerender-3.jpg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #yolomoto-biketire-movie.overlay
+              a.closebtn(onclick='closePortfolio2()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .singlepage
+                video(width='100%', controls='')
+                  source(src='img/movie.mp4', type='video/mp4')
+              .overlay-content
+                // Slider main container
+                .overlay-content-title Zion Grotto Road Tire
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span 3D Animation
+                .overlay-content-skill 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Affter Effect / Illustration
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Dec 2016
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span Yolomoto Co., Ltd.
+                
+            #yolomoto-biketire-icons.overlay
+              a.closebtn(onclick='closePortfolio3()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title Zion Grotto Road Tire
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Icon & Business Card / SVG Animation
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Illustration / Css3 @Keyframes
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Oct 2016
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span Yolomoto Co., Ltd.
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide 
+                      img(src="img/yolomoto-businesscard.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/yolomoto-icon-1.svg", alt="")
+                    .swiper-slide 
+                      img(src="img/yolomoto-icon-2.svg", alt="")
+                    .swiper-slide 
+                      img(src="img/yolomoto-icon-3.svg", alt="")
+                    .swiper-slide 
+                      img(src="img/yolomoto-icon-4.svg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #pypat-dm.overlay
+              a.closebtn(onclick='closePortfolio4()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title PyPat IP Services
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span tri-fold brochure / DM / Envelope
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Illustration / Photoshop
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Oct 2015
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span PyPat IP Services Co., Ltd.
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.swiper-slide-85
+                      img(src="img/pypat-dm-cover.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/pypat-dm-inside.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/pypat-envelope.jpg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #pypat-web.overlay
+              a.closebtn(onclick='closePortfolio5()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title PyPat IP Services
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Website 
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Html5 / Css3 / Illustration
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Jul 2015
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span PyPat IP Services Co., Ltd.
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide                      
+                      img(src="img/pypat-web.jpg", alt="")
+                    .swiper-slide                      
+                      img(src="img/pypat-web2.jpg", alt="")
+                    .swiper-slide                      
+                      img(src="img/pypat-web3.jpg", alt="")
+                    .swiper-slide                      
+                      img(src="img/pypat-web5.jpg", alt="")
+                    .swiper-slide                      
+                      img(src="img/pypat-web4.jpg", alt="")
+                    .swiper-slide.swiper-slide-60 
+                      img(src="img/pypat-mockup.jpg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #ntust-patent.overlay
+              a.closebtn(onclick='closePortfolio6()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title APAA & NTUST Patent Conference
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Poster / DM / Banner / Manual 
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Illustration / Photoshop
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Feb 2016
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span National Taiwan University of Science and Technology
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.swiper-slide-40
+                      img(src="img/ntust-poster.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/ntust-manual.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/ntust-banner.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/ntust-namecard1.jpg", alt="")
+                    //- .swiper-slide                    
+                    //-   img(src="img/ntust-namecard2.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/ntust-namecard3.jpg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #yodex-l.overlay
+              a.closebtn(onclick='closePortfolio7()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                a(href="http://wwwid.ntut.edu.tw/files/14-1056-44977,r162-1.php?Lang=zh-tw")
+                  .overlay-content-title 藺一伴 Sew Mate
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Industrial Desgin / Taiwan Handicraft
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Apr 2014
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')  
+                  a(href="http://wwwid.ntut.edu.tw/files/14-1056-44977,r162-1.php?Lang=zh-tw")
+                    span Young Designers' Exhibition (YODEX) - Craft Design
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')  
+                  a(href="http://wwwid.ntut.edu.tw/files/14-1056-44977,r162-1.php?Lang=zh-tw")
+                    span Yilan Heyi The Exhibition of Cultural and Creative Industry
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')  
+                  a(href="http://wwwid.ntut.edu.tw/files/14-1056-44977,r162-1.php?Lang=zh-tw")
+                    span 2014 Taiwan Design Exhibition - Invited Exhibition - Reported on Central News Agency
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/l-001.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/l-作品照片-01.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/l-作品照片-02.jpg", alt="")
+                    .swiper-slide.swiper-slide-85  
+                      img(src="img/l-003.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/l-004.jpg", alt="")
+                    .swiper-slide.swiper-slide-85  
+                      img(src="img/l-005.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/l-008.jpg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #yodex-h.overlay
+              a.closebtn(onclick='closePortfolio8()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title 聽見空間 Hearing Spaces
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Interior Desgin
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span 3Ds Max / V-ray Rendering
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Apr 2014
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span Young Designers' Exhibition (YODEX) Interior Design
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span IF Award Interior Design
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    //- .swiper-slide
+                    //-   img(src="img/h-if展版.jpg", alt="")
+                    .swiper-slide.swiper-slide-85  
+                      img(src="img/h-009.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/h-010.jpg", alt="")
+                    .swiper-slide.swiper-slide-85  
+                      img(src="img/h-011.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/h-作品照片-01.jpg", alt="")
+                    .swiper-slide                     
+                      img(src="img/h-012.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/h-作品照片-02.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/h-013.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/h-作品照片-03.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/h-014.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/h-作品照片-04.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/h-作品照片-05.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/h-015.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/h-modal-pond.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/h-modal-stairs.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/h-modal-garden.jpg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #waterfulart.overlay
+              a.closebtn(onclick='closePortfolio9()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title 水藝醫美 Waterful Art
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Interior Desgin
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span 3Ds Max / V-ray Rendering
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Jun 2013
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span Non-residential Space Interior Design Winner
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-01.png", alt="")
+                    .swiper-slide.swiper-slide-120  
+                      img(src="img/w-02.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-03.png", alt="")
+                    .swiper-slide.swiper-slide-120  
+                      img(src="img/w-04.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-05.png", alt="")
+                    .swiper-slide.swiper-slide-120                     
+                      img(src="img/w-06.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-07.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-08.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-09.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-10.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-11.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-12.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-13.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-14.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-15.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-16.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-17.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-18.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-19.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-20.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-21.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-22.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-23.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-24.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-25.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-26.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-27.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-28.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-29.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-30.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-31.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-32.png", alt="")
+                    .swiper-slide.swiper-slide-120 
+                      img(src="img/w-33.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-34.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-35.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-36.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-37.png", alt="")
+                    .swiper-slide.swiper-slide-120
+                      img(src="img/w-38.png", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #patent-contest.overlay
+              a.closebtn(onclick='closePortfolio10()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                .overlay-content-title A Study of Patent Portfolios and Technology Development on Wireless Power Charging 
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span 2016 Patent Analysis and Development Competition 
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span USPTO/ EPO 
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Aug 2016
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span Excellent Award
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide
+                      img(src="img/p-01.jpg", alt="")
+                    .swiper-slide  
+                      img(src="img/p-02.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-03.jpg", alt="")
+                    .swiper-slide  
+                      img(src="img/p-04.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-05.jpg", alt="")
+                    .swiper-slide                     
+                      img(src="img/p-06.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-07.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-08.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-09.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-10.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-11.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-12.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-13.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-14.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-15.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-16.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-17.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-18.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-19.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-20.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-21.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-22.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-23.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-24.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-25.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-26.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-27.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-28.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-29.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-30.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-31.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-32.jpg", alt="")
+                    .swiper-slide 
+                      img(src="img/p-33.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-34.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-35.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-36.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-37.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-38.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-39.jpg", alt="")
+                    .swiper-slide
+                      img(src="img/p-40.jpg", alt="")
+                  // Add Pagination
+                  .swiper-pagination
+                  // Add Arrows
+                  .swiper-button-next
+                  .swiper-button-prev
+            #aurora.overlay
+              a.closebtn(onclick='closePortfolio11()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                a(href="https://theta360.com/s/hbXiViW7ZnpSkG5hRtyof2k4W")
+                  .overlay-content-title Aurora Photography
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Iceland Aurora
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Ricoh Theta Sc /  360° Panorama
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Jan 2017
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span 360° Panorama Aurora Photography
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide
+                      img(src="img/aurora.jpg", alt="")
+                    .swiper-slide  
+                      img(src="img/aurorawide.jpg", alt="")
+            #travel.overlay
+              a.closebtn(onclick='closePortfolio12()') 
+                .burger
+                  .burger-menu.open
+                    .bar1
+                    .bar2
+                    .bar3
+              .overlay-content 
+                a(href="https://theta360.com/s/hbXiViW7ZnpSkG5hRtyof2k4W")
+                  .overlay-content-title Pingxi Travellers Lodge
+                .overlay-content-skill 
+                  i.fa.fa-tags(aria-hidden='true')
+                  span Business Card / DM 
+                .overlay-content-software 
+                  i.fa.fa-cog(aria-hidden='true')
+                  span Illustration / Photoshop
+                .overlay-content-time  
+                  i.fa.fa-calendar-check-o(aria-hidden='true')
+                  span Feb 2016
+                .overlay-content-client
+                  i.fa.fa-handshake-o(aria-hidden='true')
+                  span Pingxi Travellers Lodge
+              .overlay-pic
+                // Slider main container
+                .swiper-container
+                  .swiper-wrapper
+                    .swiper-slide
+                      img(src="img/travel-businesscard-cover.jpg", alt="")
+                    .swiper-slide  
+                      img(src="img/travel-businesscard-name.jpg", alt="")
+                    .swiper-slide.swiper-slide-85 
+                      img(src="img/travel-map.jpg", alt="")
+  // Kick off Filterizr
+  script(type='text/javascript').
+    $(function() {
+    //Initialize filterizr with default options
+    $('.filtr-container').filterizr();
+    });
+    var swiper = new Swiper('.swiper-container', {
+          pagination: '.swiper-pagination',
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          slidesPerView: 1,
+          paginationClickable: true,
+          spaceBetween: 5,
+          loop: true,
+          centeredSlides: true,
+          autoplay: 3000,
+          //- autoplayDisableOnInteraction: false,
+          //- paginationBulletRender: function (swiper, index, className) {
+          //-     return '<span class="' + className + '">' + (index + 1) + '</span>';
+          //- }
+      });
+  //modal box1   
+  script(type='text/javascript').
+    // Get the modal
+    var modal = document.getElementById('modalbox');
+    // Get the button that opens the modal
+    var btn = document.getElementById("modalbtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("back")[0];
+
+    // When the user clicks on the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+
+  //modal box2   
+  script(type='text/javascript').
+    // Get the modal
+    var modal1 = document.getElementById('modalbox1');
+    // Get the button that opens the modal
+    var btn = document.getElementById("modalbtn1");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("back1")[0];
+
+    // When the user clicks on the button, open the modal 
+    btn.onclick = function() {
+        modal1.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal1.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        if (event.target == modal1 ) {
+            modal1.style.display = "none";
+        }
+    }
+
+
+        
+          
+          
+
+      

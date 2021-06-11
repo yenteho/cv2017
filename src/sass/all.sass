@@ -1,0 +1,38 @@
+@import mixins/utilities
+@import mixins/variables
+
+@mixin trans($t: 0.5s,$td: 0s)
+  transition: $t $td
+
+a
+	color: $theme-color
+
+html,body
+	line-height: $line-height-base
+	font-size: $font-size-base
+	h1
+		font-size: $font-size-h1
+	h2
+		font-size: $font-size-h2
+	h3
+		font-size: $font-size-h3
+	h4
+		font-size: $font-size-h4
+	h5
+		font-size: $font-size-h5
+	h6
+		font-size: $font-size-h6
+
+	+rwd(ipad)
+		
+	+rwd(iphoneLandscape)
+		
+	+rwd(iphoneplus)
+		
+
+	+rwd(iphone)
+		
+	+rwd(iphone5)
+.overlay-content
+	font-size: $font-size-h5
+

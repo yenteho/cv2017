@@ -1,0 +1,193 @@
+@mixin c($c, $bgc: transparent)
+  color: $c
+  background-color: $bgc
+//--------------- Padding & Margin ---------------//
+@mixin pm($p:0,$m: 0)  
+  padding: $p
+  margin: $m
+  
+//-------------------- shape --------------------//
+// square
+@mixin wh($w,$h:$w)
+	width: $w
+	height: $h
+// square with fillet
+@mixin whb($w,$h,$bdrz: 0px)
+	width: $w
+	height: $h
+	border-radius: $bdrz
+// circle
+@mixin circle($w)
+	width: $w
+	height: $w
+	border-radius: 50%
+// triangle
+@mixin triangle($direction, $size: 6px, $color: #222)
+  content: ''
+  display: block
+  position: absolute
+  height: 0 
+  width: 0
+  @if ($direction == 'up')
+    border-bottom: $size solid $color
+    border-left: 1/1.6*$size solid transparent
+    border-right: 1/1.6*$size solid transparent
+ 
+  @else if ($direction == 'down')
+    border-top: $size solid $color
+    border-left: 1/1.6*$size solid transparent
+    border-right: 1/1.6*$size solid transparent
+ 
+  @else if ($direction == 'left')
+    border-top: 1/1.6*$size solid transparent
+    border-bottom: 1/1.6*$size solid transparent
+    border-right: $size solid $color
+ 
+  @else if ($direction == 'right')
+    border-top: 1/1.6*$size solid transparent
+    border-bottom: 1/1.6*$size solid transparent
+    border-left: $size solid $color
+//-------------------- center --------------------// 
+
+// margin左右置中	
+@mixin m_center
+	margin: 0 auto
+	position: relative
+//左上50%置中
+@mixin tl_center
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+//垂直50%置中
+@mixin t_center
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+// 上下左右置中center
+@mixin ghost_center	
+	&:before 
+		content: ''
+		display: inline-block
+		vertical-align: middle
+		height: 100%
+		// width: .1px
+// flexbox置中
+@mixin flex_center
+	display: flex
+	justify-content: center
+	align-items: center
+
+//-------------------- fonts & colors --------------------//
+
+@mixin text-overflow($w,$h) 
+    width: $w
+    height: $h
+    overflow: hidden
+    text-overflow: ellipsis
+    // white-space: nowrap	
+@mixin fontstyle($fz, $ta: center)
+    font-size: $fz
+    text-align: $ta
+
+//-------------------- clearfix --------------------//
+%clearfix
+	*zoom: 1
+	&:after
+		content: ''
+		display: table
+		line-height: 0
+		clear: both
+//-------------------- currency --------------------//
+%currency 
+  position: relative
+  &:before 
+    content: '$'
+    position: relative
+    left: 0
+ 
+.USD %currency:before  
+	content: '$'
+.EUR %currency:before  
+	content: '\20AC' // must escape the html entities for each currency symbol
+.GBP %currency:before  
+	content: '\00A3'
+.CN %currency:before
+	content: '￥' 
+.ILS %currency:before  
+	content: '\20AA'
+//-------------------- Animation --------------------//
+  
+//-------------------- RWD --------------------//
+$iphone5: 320px
+$iphone: 412px
+$iphoneplus: 480px
+$iphone5Landscape: 568px
+$iphoneLandscape: 736px
+$ipadPortrait: 768px
+$ipadLandscape: 1024px
+$desktop: 1174px
+$largeScreen: 1400px
+
+@mixin rwd($point)
+    @if $point == hd
+        @media only screen and (min-width: $ipadLandscape)  
+          @content         
+    
+    @else if $point == ipadpro
+        @media only screen and (max-width: $ipadLandscape)  
+          @content 
+    
+    @else if $point == iphoneLandscape
+        @media only screen and (max-width: $iphoneLandscape)  
+          @content
+    @else if $point == ipad
+        @media only screen and (max-width: $ipadPortrait)  
+          @content 
+    @else if $point == iphoneplus
+        @media only screen and (max-width: $iphone5Landscape - 1px)  
+          @content
+
+    @else if $point == iphone
+        @media only screen and (max-width: $iphone)  
+          @content
+
+    @else if $point == iphone5
+        @media only screen and (max-width: $iphone5)  
+          @content  
+
+//-------------------- Grid --------------------//   
+.col-1 
+	width: 8.33%
+.col-2 
+	width: 16.66%
+.col-3 
+	width: 25%
+.col-4 
+	width: 33.33%
+.col-5 
+	width: 41.66%
+.col-6 
+	width: 50%
+.col-7 
+	width: 58.33%
+.col-8 
+	width: 66.66%
+.col-9 
+	width: 75%
+.col-10 
+	width: 83.33%
+.col-11 
+	width: 91.66%
+.col-12 
+	width: 100%  
+.row::after
+    content: ""
+    clear: both
+    display: table
+[class*="col-"]
+    float: left
+    // padding: 15px
+    // border: 1px solid black
+  
